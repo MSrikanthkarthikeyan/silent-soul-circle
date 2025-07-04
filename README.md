@@ -1,73 +1,168 @@
-# Welcome to your Lovable project
 
-## Project info
+# 🌐 EchoRoom – Anonymous Mental Health Support Platform
 
-**URL**: https://lovable.dev/projects/3380cb76-2467-4592-9085-71d8188c3618
+> **"Where unspoken thoughts find a voice."**
+> EchoRoom is a global, anonymous mental health support platform that connects individuals struggling with depression, anxiety, and emotional isolation to peer communities and verified mental health professionals—powered by AI for sentiment detection, safety, and emotional awareness.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🧠 About the Project
 
-**Use Lovable**
+In a world full of noise, **EchoRoom** is the space where people can express their unspoken feelings without judgment. Users can:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3380cb76-2467-4592-9085-71d8188c3618) and start prompting.
+* Join anonymous themed chatrooms
+* Talk 1-on-1 with others feeling the same
+* Write and react to journal entries
+* Get real-time emotional analysis powered by AI
+* Connect with verified mental health experts
 
-Changes made via Lovable will be committed automatically to this repo.
+All while remaining **completely anonymous** and secure.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ✨ Key Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* 🔐 **Anonymous Login:** UUID-based identity, no signup needed
+* 💬 **Themed Chat Rooms:** Real-time global chat on topics like heartbreak, loneliness, exam stress
+* 🤝 **1-on-1 Peer Matching:** Anonymous conversations with others going through similar struggles
+* 🧠 **AI-Powered Sentiment Analysis:** Detects emotional tone and flags high-risk content using Gemini API
+* 📓 **Journaling + Community Reactions:** Anonymous mental health journaling with support from others
+* 👨‍⚕️ **Doctor & Counselor Connection:** Verified professionals available via chat or video call
+* 🌍 **Multilingual Support:** Translate messages in real-time for cross-language support
+* 🆘 **Emergency Help Access:** Direct links to global suicide prevention and crisis support resources
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🧰 Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 🖥️ Frontend
 
-# Step 3: Install the necessary dependencies.
-npm i
+* `React` + `Next.js`
+* `Tailwind CSS` + `Shadcn UI`
+* `Zustand` / `Context API` for global state
+* `Socket.IO` (for real-time chat)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 🔧 Backend
+
+* `Node.js + Express` / `Next.js API Routes`
+* `MongoDB` / `Supabase`
+* `Python + FastAPI` (for AI services)
+* `Redis` (optional for queueing chat matches)
+
+### 🤖 AI & NLP
+
+* **Gemini Pro API** for:
+
+  * Sentiment detection
+  * Emotion tagging
+  * Toxicity filtering
+  * Real-time mental health tips
+
+> **Gemini API Key (used internally):**
+
+
+### 📹 Video / Chat APIs
+
+* `Daily.co` / `Agora` for doctor video chat
+* `Firebase` (fallback for real-time messaging)
+
+---
+
+## 📦 Project Structure
+
+```
+/client
+  /components
+  /pages
+  /context
+  /services
+  /styles
+
+/server
+  /routes
+  /controllers
+  /models
+  /ai
+    - sentiment.py (Gemini)
+    - journal_analyzer.py
+```
+
+---
+
+## 🚀 Getting Started (Local Dev)
+
+1. **Clone the repo**
+
+```bash
+git clone https://github.com/<your-org>/echoroom.git
+cd echoroom
+```
+
+2. **Install dependencies**
+
+```bash
+cd client
+npm install
+# (in a new terminal)
+cd ../server
+npm install
+```
+
+3. **Create `.env` files**
+   For both `client` and `server`, set up your `.env`:
+
+```
+NEXT_PUBLIC_GEMINI_API_KEY=your-api-key
+MONGO_URI=<your-mongodb-uri>
+```
+
+4. **Run the app**
+
+```bash
+# In server/
+npm run dev
+
+# In client/
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🛡️ Ethics & Privacy
 
-**Use GitHub Codespaces**
+* No personal information is stored
+* End-to-end encrypted chats
+* Users can leave or block at any time
+* AI alerts are designed for *support*, not surveillance
+* Complies with GDPR and Mental Health Act (India, 2017)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🌍 Target Audience
 
-This project is built with:
+* Students, working professionals, teenagers, and anyone facing mental health issues
+* Urban and rural deployment supported
+* Available globally
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🙌 Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/3380cb76-2467-4592-9085-71d8188c3618) and click on Share -> Publish.
+We welcome open-source contributors! Want to add a feature, improve UI/UX, or enhance moderation logic? Open an issue or submit a PR.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 📫 Contact & Socials
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+* 🧠 **Project Lead:** Srikanth Karthikeyan
+* 🌐 \[Live Website Coming Soon]
+* 📧 For collaborations or partnerships: `msrikanthkarthikeyan@gmail.com`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+## 🫂 Our Mission
+
+> Mental health care shouldn't be a privilege. EchoRoom strives to make it a right—open, anonymous, and safe for every human being.
+
+---
+
