@@ -1,40 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* EchoRoom Design System - Mental Health Support Platform */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* EchoRoom Dark Theme - Primary */
+    --background: 222 15% 8%;
+    --background-secondary: 222 15% 12%;
+    --background-card: 222 15% 14%;
+    --foreground: 210 40% 98%;
+    --foreground-muted: 215 16% 65%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
+    /* EchoRoom Mental Health Platform Colors */
+    --primary: 200 75% 55%;
+    --primary-foreground: 222 15% 8%;
+    --primary-glow: 200 85% 70%;
+    
+    --secondary: 240 65% 60%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --accent: 180 70% 50%;
+    --accent-foreground: 222 15% 8%;
+    
+    --healing: 150 50% 55%;
+    --healing-foreground: 222 15% 8%;
+    
+    --support: 280 60% 65%;
+    --support-foreground: 222 15% 8%;
+    
+    --warning: 45 85% 60%;
+    --warning-foreground: 222 15% 8%;
+    
+    --destructive: 0 75% 60%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    
+    --card: var(--background-card);
+    --card-foreground: var(--foreground);
+    
+    --popover: var(--background-card);
+    --popover-foreground: var(--foreground);
+    
+    --muted: var(--background-secondary);
+    --muted-foreground: var(--foreground-muted);
+    
+    --border: 222 15% 20%;
+    --input: 222 15% 18%;
+    --ring: var(--primary);
+    
+    /* EchoRoom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(200 75% 55%), hsl(240 65% 60%));
+    --gradient-healing: linear-gradient(135deg, hsl(150 50% 55%), hsl(180 70% 50%));
+    --gradient-support: linear-gradient(135deg, hsl(280 60% 65%), hsl(200 75% 55%));
+    --gradient-background: linear-gradient(180deg, hsl(222 15% 8%), hsl(222 15% 12%));
+    
+    /* Shadows & Effects */
+    --shadow-soft: 0 4px 20px -4px hsl(200 75% 55% / 0.3);
+    --shadow-glow: 0 0 40px hsl(200 85% 70% / 0.4);
+    --shadow-card: 0 8px 32px -8px hsl(222 15% 5% / 0.8);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --radius: 0.5rem;
 
@@ -55,43 +85,7 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  /* Remove dark class - we use dark as default */
 }
 
 @layer base {
@@ -100,6 +94,46 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+    background: var(--gradient-background);
+    min-height: 100vh;
+  }
+  
+  /* EchoRoom Component Styles */
+  .hero-text {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+  
+  .card-glow {
+    @apply shadow-card backdrop-blur-sm;
+    background: linear-gradient(135deg, 
+      hsl(var(--background-card) / 0.8), 
+      hsl(var(--background-card) / 0.4)
+    );
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  .button-gradient {
+    @apply bg-gradient-primary hover:shadow-glow transition-all duration-300;
+  }
+  
+  .button-outline {
+    @apply border border-primary/30 bg-background-secondary/50 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300;
+  }
+  
+  .feature-card {
+    @apply card-glow rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-1;
+  }
+  
+  .nav-link {
+    @apply relative text-foreground-muted hover:text-foreground transition-colors duration-300;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-gradient-primary scale-x-0 origin-left transition-transform duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply scale-x-100;
   }
 }
